@@ -1,18 +1,38 @@
-import { Text, Button, Flex } from "@chakra-ui/react";
-import React, { useState } from "react";
+// import { Text, Button, Flex } from "@chakra-ui/react";
+import React from "react";
+import { Box } from "@chakra-ui/react";
 
-const Counter = () => {
-	const [count, setCount] = useState(0);
-
-	return (
-		<Flex color="#000" gap="1rem" direction="column">
-			<Text>
-				Add by one each click <strong>APP-1</strong>
-			</Text>
-			<Text>Your click count : {count} </Text>
-			<Button onClick={() => setCount(count + 1)}>Click me</Button>
-		</Flex>
-	);
+type Tabs = {
+  title: string;
+  content: string;
+  active: boolean;
 };
 
-export default Counter;
+// type TabsProps = {
+//   tabs: Tabs[];
+// };
+
+const tabs: Tabs[] = [
+  {
+    title: "Shanghai",
+    content:
+      "From the futuristic skyline of Lujiazui to the 268-mph Maglev train that travels 18.5 miles in 8 minutes, there is no shortage of innovation in China’s most modern city. Enjoy the wonders of this blend of East & West in this dynamic city!",
+    active: true,
+  },
+  { title: "London", content: "Decent", active: false },
+  { title: "New York", content: "Busy", active: false },
+];
+
+const Tabs = (): any => {
+  return (
+    <Box className="tabs">
+      {tabs.map(({ title }) => (
+        <div className="tabs__title" key={title}>
+          {title}
+        </div>
+      ))}
+    </Box>
+  );
+};
+
+export default Tabs;
