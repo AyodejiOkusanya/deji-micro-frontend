@@ -1,13 +1,13 @@
 ///<reference types="react" />
 
-declare module "app1/CounterAppOne" {
-	const CounterAppOne: React.ComponentType;
+declare module "app1/TabsComponent" {
+  const TabsComponent: React.ComponentType;
 
-	export default CounterAppOne;
+  export default TabsComponent;
 }
 
 declare module "app2/CounterAppTwo" {
-	const CounterAppTwo: React.ComponentType;
+  const CounterAppTwo: React.ComponentType;
 
-	export default CounterAppTwo;
+  export default CounterAppTwo;
 }

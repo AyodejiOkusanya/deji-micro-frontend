@@ -19,8 +19,18 @@ const tabs: Tabs[] = [
       "From the futuristic skyline of Lujiazui to the 268-mph Maglev train that travels 18.5 miles in 8 minutes, there is no shortage of innovation in China’s most modern city. Enjoy the wonders of this blend of East & West in this dynamic city!",
     active: true,
   },
-  { title: "London", content: "Decent", active: false },
-  { title: "New York", content: "Busy", active: false },
+  {
+    title: "Beijing",
+    content:
+      "There is always something unique to discover, whether exploring the forgotten corners of the Forbidden Palace or trying the newest bar in Houhai neighbourhood. Wander around in Bejing and enjoy the deep roots of history in this cultural city.",
+    active: false,
+  },
+  {
+    title: "Chongqing",
+    content:
+      "There’s a real sense of “something exciting is happening” throughout the city. It has boomed from being the gateway to Western China to become one of the most important cities in Asia. You'll quickly find that it's exciting to explore Chongqing!",
+    active: false,
+  },
 ];
 
 const Tabs = (): any => {
@@ -31,12 +41,14 @@ const Tabs = (): any => {
       margin: "20% auto",
     },
     tabs__titleBar: {
-      display: "flex",
-      justifyContent: "space-between",
+      display: "inline-flex",
+      backgroundColor: "lightGrey",
+      overflow: "hidden",
     },
     tabs__title: {
-      backgroundColor: "grey",
       padding: "2px",
+      cursor: "pointer",
+      border: "2px solid #f1f1f1",
     },
     tabs__content: (active: boolean) => ({
       display: `${active ? "block" : "none"}`,
@@ -59,6 +71,7 @@ const Tabs = (): any => {
         {newTabs.map(({ title }) => (
           <div
             className="tabs__title"
+            style={style.tabs__title}
             key={title}
             onClick={() => handleTitleClick(title)}
           >

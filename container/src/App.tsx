@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { retry } from "./helpers/retryChunk";
 
 // @ts-ignore
-const CounterAppOne = lazy(() => retry(() => import("app1/CounterAppOne")));
+const TabsComponent = lazy(() => retry(() => import("app1/TabsComponent")));
 // @ts-ignore
 const CounterAppTwo = lazy(() => retry(() => import("app2/CounterAppTwo")));
 
@@ -15,8 +15,8 @@ const App = () => {
     <Router>
       <Suspense fallback={<Spinner size="xl" />}>
         <Switch>
-          <Route path="/about">
-            <CounterAppOne />
+          <Route path="/tabs">
+            <TabsComponent />
           </Route>
           <Route path="/users">
             <CounterAppTwo />

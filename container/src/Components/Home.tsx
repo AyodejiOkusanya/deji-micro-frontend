@@ -25,8 +25,8 @@ const Home = () => {
       <nav>
         <UnorderedList spacing={3}>
           <ListItem>
-            <Link as={ReactLink} to="/about">
-              About
+            <Link as={ReactLink} to="/tabs">
+              Tabs Component
             </Link>
           </ListItem>
           <ListItem>
