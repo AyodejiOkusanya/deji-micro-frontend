@@ -31,7 +31,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         // expose each component
-        "./CounterAppTwo": "./src/components/CounterAppTwo",
+        "./Accordian": "./src/components/Accordian",
       },
       shared: {
         ...deps,

@@ -6,8 +6,8 @@ declare module "app1/TabsComponent" {
   export default TabsComponent;
 }
 
-declare module "app2/CounterAppTwo" {
-  const CounterAppTwo: React.ComponentType;
+declare module "app2/Accordian" {
+  const Accordian: React.ComponentType;
 
-  export default CounterAppTwo;
+  export default Accordian;
 }

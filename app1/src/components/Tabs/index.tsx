@@ -52,6 +52,7 @@ const Tabs = (): any => {
     },
     tabs__content: (active: boolean) => ({
       display: `${active ? "block" : "none"}`,
+      animation: "fadeIn 0.4s ease-in",
     }),
   };
 
@@ -67,6 +68,19 @@ const Tabs = (): any => {
   };
   return (
     <Box className="tabs" style={style.tabs}>
+      <style>
+        {`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
+            }
+          }
+        `}
+      </style>
       <div className="tabs__titleBar" style={style.tabs__titleBar}>
         {newTabs.map(({ title }) => (
           <div

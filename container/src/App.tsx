@@ -6,7 +6,7 @@ import { retry } from "./helpers/retryChunk";
 // @ts-ignore
 const TabsComponent = lazy(() => retry(() => import("app1/TabsComponent")));
 // @ts-ignore
-const CounterAppTwo = lazy(() => retry(() => import("app2/CounterAppTwo")));
+const Accordian = lazy(() => retry(() => import("app2/Accordian")));
 
 const Home = lazy(() => import("./Components/Home"));
 
@@ -18,8 +18,8 @@ const App = () => {
           <Route path="/tabs">
             <TabsComponent />
           </Route>
-          <Route path="/users">
-            <CounterAppTwo />
+          <Route path="/accordian">
+            <Accordian />
           </Route>
           <Route path="/">
             <Home />

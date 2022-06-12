@@ -30,8 +30,8 @@ const Home = () => {
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={ReactLink} to="/users">
-              Users
+            <Link as={ReactLink} to="/accordian">
+              Accordian
             </Link>
           </ListItem>
         </UnorderedList>

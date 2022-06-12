@@ -1,14 +1,14 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import CounterAppTwo from "./components/CounterAppTwo";
+import Accordian from "./components/Accordian";
 
 const App = () => (
-	<Box margin="1.2rem">
-		<Box>APP-2</Box>
-		<Box>
-			<CounterAppTwo />
-		</Box>
-	</Box>
+  <Box margin="1.2rem">
+    <Box>APP-2</Box>
+    <Box>
+      <Accordian />
+    </Box>
+  </Box>
 );
 
 export default App;
