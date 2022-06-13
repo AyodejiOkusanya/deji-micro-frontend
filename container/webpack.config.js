@@ -60,6 +60,7 @@ module.exports = (env, argv) => {
         remotes: {
           app1: process.env.APP1,
           app2: process.env.APP2,
+          gallery: process.env.IMAGE_GALLERY,
         },
         shared: {
           ...deps,

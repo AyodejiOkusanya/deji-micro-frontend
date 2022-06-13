@@ -34,6 +34,11 @@ const Home = () => {
               Accordian
             </Link>
           </ListItem>
+          <ListItem>
+            <Link as={ReactLink} to="/gallery">
+              Image Gallery
+            </Link>
+          </ListItem>
         </UnorderedList>
       </nav>
     </Flex>

@@ -11,3 +11,9 @@ declare module "app2/Accordian" {
 
   export default Accordian;
 }
+
+declare module "gallery/ImageGallery" {
+  const ImageGallery: React.ComponentType;
+
+  export default ImageGallery;
+}
