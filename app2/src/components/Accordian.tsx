@@ -20,7 +20,7 @@ const style = {
     margin: "2rem auto",
   },
   accordian__section: {
-    margin: "auto",
+    margin: "2rem auto",
   },
   accordian__content: {
     maxHeight: 0,
@@ -57,13 +57,13 @@ const Accordian = () => {
         const contentRef = useRef(null);
         return (
           <div className="accordian__section" style={style.accordian__section}>
-            <div
+            <Button
               className="accordian__title"
               style={style.accordian__title}
               onClick={() => handleClick(title, contentRef)}
             >
               {title}
-            </div>
+            </Button>
             <div
               className="accordian__content"
               ref={contentRef}

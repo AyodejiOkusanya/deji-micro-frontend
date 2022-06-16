@@ -1,6 +1,6 @@
 // import { Text, Button, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 
 type Tabs = {
   title: string;
@@ -42,13 +42,15 @@ const Tabs = (): any => {
     },
     tabs__titleBar: {
       display: "inline-flex",
-      backgroundColor: "lightGrey",
       overflow: "hidden",
     },
     tabs__title: {
       padding: "2px",
-      cursor: "pointer",
+      backgroundColor: "lightGrey",
       border: "2px solid #f1f1f1",
+      ":hover": {
+        color: "#ffffff",
+      },
     },
     tabs__content: (active: boolean) => ({
       display: `${active ? "block" : "none"}`,
@@ -83,14 +85,14 @@ const Tabs = (): any => {
       </style>
       <div className="tabs__titleBar" style={style.tabs__titleBar}>
         {newTabs.map(({ title }) => (
-          <div
+          <Button
             className="tabs__title"
             style={style.tabs__title}
             key={title}
             onClick={() => handleTitleClick(title)}
           >
             {title}
-          </div>
+          </Button>
         ))}
       </div>
       <div className="tabs__contentBox">
