@@ -56,7 +56,11 @@ const Accordian = () => {
       {accordianList.map(({ title, content, active }) => {
         const contentRef = useRef(null);
         return (
-          <div className="accordian__section" style={style.accordian__section}>
+          <div
+            className="accordian__section"
+            style={style.accordian__section}
+            key={title}
+          >
             <Button
               className="accordian__title"
               style={style.accordian__title}
