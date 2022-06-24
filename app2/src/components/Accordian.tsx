@@ -2,7 +2,7 @@ import { Button, Box, Text } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 
 const accordians = [
-  { title: "Section 1", content: "Here is some useful content", active: true },
+  { title: "Section 1", content: "Here is some useful content", active: false },
   {
     title: "Section 2",
     content: "Hey, look, I made you some content",
@@ -30,6 +30,9 @@ const style = {
   accordian__title: {
     cursor: "pointer",
   },
+  accordian__listGroup: {
+    listStyle: "none",
+  },
 };
 
 const Accordian = () => {
@@ -53,31 +56,43 @@ const Accordian = () => {
   };
   return (
     <Box className="accordian" style={style.accordian}>
-      {accordianList.map(({ title, content, active }) => {
-        const contentRef = useRef(null);
-        return (
-          <div
-            className="accordian__section"
-            style={style.accordian__section}
-            key={title}
-          >
-            <Button
-              className="accordian__title"
-              style={style.accordian__title}
-              onClick={() => handleClick(title, contentRef)}
+      <ul
+        aria-label="accordian list group"
+        className="accordian__listGroup"
+        style={style.accordian__listGroup}
+      >
+        {accordianList.map(({ title, content, active }, index) => {
+          const contentRef = useRef(null);
+          return (
+            <li
+              className="accordian__section"
+              style={style.accordian__section}
+              key={title}
             >
-              {title}
-            </Button>
-            <div
-              className="accordian__content"
-              ref={contentRef}
-              style={style.accordian__content}
-            >
-              {content}
-            </div>
-          </div>
-        );
-      })}
+              <Button
+                className="accordian__title"
+                id={`contentId-${index}`}
+                aria-controls={`content-${index}`}
+                aria-expanded={active}
+                style={style.accordian__title}
+                onClick={() => handleClick(title, contentRef)}
+              >
+                {title}
+              </Button>
+              <div
+                className="accordian__content"
+                aria-labelledby={`contentId-${index}`}
+                id={`content-${index}`}
+                aria-hidden={!active}
+                ref={contentRef}
+                style={style.accordian__content}
+              >
+                {content}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </Box>
   );
 };

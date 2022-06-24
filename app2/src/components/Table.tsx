@@ -51,10 +51,10 @@ export const Table = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Job</th>
-            <th>Hobby</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Job</th>
+            <th scope="col">Hobby</th>
           </tr>
         </thead>
         <tbody>

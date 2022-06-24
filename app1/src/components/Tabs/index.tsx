@@ -69,7 +69,7 @@ const Tabs = (): any => {
     );
   };
   return (
-    <Box className="tabs" style={style.tabs}>
+    <Box aria-label="tabs list group" className="tabs" style={style.tabs}>
       <style>
         {`
           @keyframes fadeIn {
@@ -83,10 +83,18 @@ const Tabs = (): any => {
           }
         `}
       </style>
-      <div className="tabs__titleBar" style={style.tabs__titleBar}>
-        {newTabs.map(({ title }) => (
+      <div
+        className="tabs__titleBar"
+        style={style.tabs__titleBar}
+        role="tablist"
+      >
+        {newTabs.map(({ title, active }, index) => (
           <Button
             className="tabs__title"
+            id={`tabId-${index}`}
+            aria-controls={`tab-${index}`}
+            aria-selected={active}
+            role="tab"
             style={style.tabs__title}
             key={title}
             onClick={() => handleTitleClick(title)}
@@ -99,6 +107,10 @@ const Tabs = (): any => {
         {newTabs.map(({ content, active }, index) => (
           <div
             className="tabs__content"
+            role="tabpanel"
+            aria-labelledby={`tabId-${index}`}
+            aria-hidden={!active}
+            id={`tab-${index}`}
             key={index}
             style={style.tabs__content(active)}
           >
